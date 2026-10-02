@@ -1,0 +1,118 @@
+.board-page {
+  min-height: 100vh;
+  padding: 40px;
+
+  background: #f8fafc;
+
+  &__container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  &__heading {
+    min-width: 0;
+  }
+
+  &__title {
+    margin: 0 0 8px;
+
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    color: #0f172a;
+  }
+
+  &__description {
+    margin: 0;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: #64748b;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+  }
+
+  &__export-button,
+  &__add-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+
+    color: #334155;
+    background: #ffffff;
+
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+
+    transition:
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.15s ease;
+
+    &:hover {
+      border-color: #94a3b8;
+
+      background: #f8fafc;
+
+      box-shadow: 0 3px 8px rgba(15, 23, 42, 0.06);
+    }
+
+    &:active {
+      transform: translateY(1px);
+
+      background: #f1f5f9;
+    }
+
+    &:focus-visible {
+      outline: 2px solid #64748b;
+      outline-offset: 2px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .board-page {
+    padding: 24px 16px;
+
+    &__header {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    &__title {
+      font-size: 26px;
+    }
+
+    &__actions {
+      width: 100%;
+    }
+
+    &__export-button,
+    &__add-button {
+      flex: 1;
+    }
+  }
+}

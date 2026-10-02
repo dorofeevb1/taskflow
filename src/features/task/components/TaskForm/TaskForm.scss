@@ -1,0 +1,228 @@
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  &__field {
+    position: relative;
+    width: 100%;
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+
+      padding: 15px 0;
+
+      border: 0;
+      border-bottom: 2px solid #cbd5e1;
+      border-radius: 0;
+      outline: none;
+
+      font-size: 16px;
+      line-height: 1.4;
+
+      color: #0f172a;
+      background: transparent;
+
+      transition: border-bottom-color 0.2s ease;
+
+      &:focus {
+        border-bottom-color: #64748b;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    select {
+      display: block;
+      width: 100%;
+
+      padding: 15px 28px 15px 0;
+
+      border: 0;
+      border-bottom: 2px solid #cbd5e1;
+      border-radius: 0;
+      outline: none;
+
+      font-size: 16px;
+      line-height: 1.4;
+
+      color: #0f172a;
+      background: transparent;
+
+      appearance: none;
+      cursor: pointer;
+
+      transition: border-bottom-color 0.2s ease;
+
+      &:focus {
+        border-bottom-color: #64748b;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    label {
+      position: absolute;
+      top: 15px;
+      left: 0;
+
+      pointer-events: none;
+    }
+
+    label span {
+      display: inline-block;
+
+      min-width: 5px;
+
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 400;
+
+      color: #94a3b8;
+
+      transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+      transition-delay: var(--letter-delay);
+    }
+
+    input:focus + label span,
+    input:valid + label span {
+      color: #475569;
+      transform: translateY(-30px);
+    }
+
+    textarea:focus + label span,
+    textarea:not(:placeholder-shown) + label span {
+      color: #475569;
+      transform: translateY(-30px);
+    }
+
+    select:focus + label span {
+      color: #475569;
+      transform: translateY(-30px);
+    }
+
+    &--filled {
+      select + label span {
+        color: #475569;
+        transform: translateY(-30px);
+      }
+    }
+
+    &--error {
+      input,
+      textarea,
+      select {
+        border-bottom-color: #dc2626;
+
+        &:focus {
+          border-bottom-color: #dc2626;
+        }
+      }
+
+      label span {
+        color: #dc2626;
+      }
+    }
+  }
+
+  &__error {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    color: #dc2626;
+  }
+
+  &__description-counter {
+    display: block;
+
+    margin-top: 6px;
+
+    font-size: 11px;
+    line-height: 1.4;
+
+    text-align: right;
+
+    color: #94a3b8;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 4px;
+  }
+
+  &__cancel,
+  &__submit {
+    padding: 10px 16px;
+
+    border: 0;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.15s ease;
+
+    &:active {
+      transform: translateY(1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #64748b;
+      outline-offset: 2px;
+    }
+  }
+
+  &__cancel {
+    color: #475569;
+    background: #f1f5f9;
+
+    &:hover {
+      background: #e2e8f0;
+    }
+  }
+
+  &__submit {
+    color: #ffffff;
+    background: #334155;
+
+    &:hover {
+      background: #1e293b;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+
+      color: #94a3b8;
+      background: #e2e8f0;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .task-form {
+    gap: 24px;
+  }
+}
